@@ -1,18 +1,20 @@
 <template>
   <div class="home">
+    <Title />
+    <!-- <div id="nav">
+      <div>魏著琴 -- 13194870803</div>
+      <router-link to="/GameIndex">游戏</router-link>
+    </div> -->
+    <router-link to="/GameIndex">游戏</router-link>
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Title from "../components/title";
 export default {
   name: "Home",
-  components: {
-    HelloWorld
-  }
+  components: { Title }
 };
 </script>
+<style lang="less"></style>
