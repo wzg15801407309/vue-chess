@@ -1,39 +1,52 @@
 <template>
-  <div id="gameitem">
-    <div v-for="index in difficulty" :key="index">
-      12356
-    </div>
+  <div id="gameitem" @click="clickItem">
+    {{ isActive == null ? null : isActive == 0 ? "X" : "O" }}
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "gameitem",
   components: {},
   props: {
     difficulty: {
       type: Number,
-      default: 3
-    }
+      default: 3,
+    },
+    personType: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
-    return {};
+    return {
+      isActive: null,
+    };
   },
   watch: {},
   computed: {},
-  methods: {},
+  methods: {
+    ...mapActions(["stepNumber", "addGridData"]),
+    clickItem() {
+      console.log(this.personType);
+      this.isActive = this.personType;
+      this.stepNumber();
+      //添加数据
+    },
+  },
   created() {},
-  mounted() {}
+  mounted() {},
 };
 </script>
 <style lang="less" scoped>
 #gameitem {
-  display: flex;
-  justify-content: center;
-  div {
-    width: 100px;
-    height: 100px;
-    border: 1px solid gray;
-  }
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border: 1px solid gray;
+  text-align: center;
+  font-size: 90px;
+  font-weight: bold;
 }
 </style>

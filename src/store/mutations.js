@@ -8,14 +8,9 @@ export default {
   //设置游戏难度
   [types.DIFFICULTY](state, payload) {
     state.difficulty = payload;
-  }
-  // [ADD_CARTCOUNT](state, payload) {
-  //   payload.count += 1;
-  // },
-  // [ADD_CARTLIST](state, payload) {
-  //   state.cartList.push(payload);
-  // },
-  // [CHANGE_UID](state, payload) {
-  //   state.uid = payload;
-  // }
+  },
+  //设置数组
+  [types.ADD_GRID_DATA](state, payload) {
+    state.addGridData.push(payload);
+  },
 };

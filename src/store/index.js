@@ -8,17 +8,17 @@ Vue.use(Vuex);
 
 const state = {
   //全局数据对象
-  dateList: {},
+  addGridData: [],
   //当前在哪一步
   stepNumber: 0,
   //难度
-  difficulty: 3
+  difficulty: 3,
 };
 const store = new Vuex.Store({
   state,
   mutations,
   actions,
-  getters
+  getters,
 });
 
 export default store;

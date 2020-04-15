@@ -16,13 +16,13 @@ export default {
   computed: {},
   methods: {},
   created() {},
-  mounted() {}
+  mounted() {},
 };
 </script>
 <style lang="less" scoped>
 #title {
   padding: 30px;
   font-weight: bold;
-  color: #2c3e50;
+  text-align: center;
 }
 </style>
