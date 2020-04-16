@@ -1,6 +1,6 @@
 <template>
   <div id="step">
-    <div v-for="index in stepNumber + 1" :key="index">
+    <div v-for="index in stepNumber" :key="index" @click="backClick(index)">
       {{ index }}.
       <span v-if="index == 1">Go to game start</span>
       <span v-else>{{ `Go to move#${index - 1}` }}</span>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "step",
   components: {},
@@ -23,7 +24,14 @@ export default {
   },
   watch: {},
   computed: {},
-  methods: {},
+  methods: {
+    ...mapActions(["deleteGridData"]),
+    backClick(index) {
+      let arrayId = index;
+      // console.log(arrayId);
+      this.deleteGridData(arrayId);
+    },
+  },
   created() {},
   mounted() {},
 };
@@ -33,7 +41,6 @@ export default {
   div {
     padding: 2px 0;
   }
-
   span {
     font-size: 14px;
     font-weight: 400;

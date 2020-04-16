@@ -1,5 +1,5 @@
 <template>
-  <div id="title">
+  <div class="title">
     <div>魏著琴 -- 13194870803</div>
   </div>
 </template>
@@ -20,8 +20,9 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-#title {
+.title {
   padding: 30px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
 }

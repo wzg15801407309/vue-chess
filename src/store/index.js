@@ -7,12 +7,13 @@ import getters from "./grtters";
 Vue.use(Vuex);
 
 const state = {
-  //全局数据对象
-  addGridData: [],
   //当前在哪一步
-  stepNumber: 0,
+  stepNumber: 1,
   //难度
   difficulty: 3,
+  //全局数据对象
+  dataList: Array.from({ length: 9 }, () => null),
+  isOver: false,
 };
 const store = new Vuex.Store({
   state,
